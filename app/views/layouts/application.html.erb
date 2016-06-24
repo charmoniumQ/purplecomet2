@@ -1,14 +1,49 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>PurpleComet2</title>
-    <%= csrf_meta_tags %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+		<%-# TODO: figure out content_for
+		   #  http://stackoverflow.com/questions/185965/how-do-i-change-the-title-of-a-page-in-rails#186508 -%>
+		<title><%= sanitize @page_title, :tags => [] %></title>
+		<%= favicon_link_tag 'favicon.ico' %>
+		<%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td width=1 valign="top">
+					<div id="mysidebar">
+						<a href="/home/home"><%= image_tag 'SmallMathCometMirrored.gif', width: '200', border: '0' %></a>
+						<div id="mymenu">
+							<%= render_navigation %>
+							<br />
+							<!--a href="/home/show/poster"><img src="/images/poster-sm.jpg" width=128 height=165></a-->
+						</div>
+					</div>
+				</td>
+				<td width="100%" valign="top">
+					<div id="mystack">
+						<div id="mybanner">
+							<%-# TODO: make the production of a shadow use CSS -%>
+							<h1 class="shadow"><%= raw(@page_title) %></h1>
+							<h1 class="main" ><a name="top"><%= raw(@page_title) %></a></h1>
+						</div>
+						<div id="mymain">
+							<% if flash[:notice] -%>
+							<div id="notice"><%= flash[:notice] %></div>
+							<% end -%>
 
-  <body>
-    <%= yield %>
-  </body>
+							<%= yield  %>
+
+						</div>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<%= render :partial => "layouts/footer" %>
+	</body>
 </html>

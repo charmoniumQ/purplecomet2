@@ -1,0 +1,454 @@
+#notice {
+  border: 4px solid red;
+  padding: 0.5em;
+  margin-bottom: 0em;
+  margin-top: 1em;
+  background-color: #f0f0f0;
+  font: bold smaller sans-serif;
+}
+/* END:notice */
+
+/* START:info */
+#info {
+  border: 4px solid green;
+  padding: 0.5em;
+  margin-bottom: 0em;
+  margin-top: 1em;
+  background-color: #f0f0f0;
+  font: bold smaller sans-serif;
+}
+/* END:info */
+
+/* Styles for /list */
+
+#product-list .list-title {
+	color:        #244;
+	font-weight:  bold;
+	font-size:    larger;
+}
+
+#product-list .list-image {
+  width:        60px;
+  height:       70px;
+}
+
+
+#product-list .list-actions {
+  font-size:    x-small;
+  text-align:   right;
+  padding-left: 1em;
+}
+
+#product-list .list-line-even {
+  background:   #e0f8f8;
+}
+
+#product-list .list-line-odd {
+  background:   #f8b0f8;
+}
+
+
+/* Styles for main page */
+
+
+
+#banner {
+/*  background: #9c9; */
+  background: #dce; 
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid;
+  font: small-caps 40px/40px "Times New Roman", serif;
+  color: #407;
+  text-align: center;
+}
+
+#banner img {
+  float: left;
+}
+
+#columns {
+/*  background: #141; */
+}
+
+#main {
+  margin-left: 15em;
+  padding-top: 4ex;
+  padding-left: 2em;
+/*  background: white; */
+}
+
+#side {
+  float: left;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-bottom: 1em;
+  width: 14em;
+/*  background: #141; */
+  background: #407;
+}
+
+#side a {
+  color: #edf;
+  font-size: small;
+}
+
+#side a:hover {
+  color: #fff;
+  font-weight: bold;
+  font-size: small;
+}
+
+h2 {
+  font-size:  150%;
+  color: #666699;
+  border-bottom: 3px dotted #77d; 
+}
+
+#teamlist {
+  font-size: 80%;
+}
+
+/* Styles for admin form */
+
+.admin { 
+  background-image: image-url("sumtextb.jpg"); 
+  background-color: #ffffcc; 
+  color: #000066;
+  font-family: "Century Gothic", "Tw Cen Mt", verdana, arial, helvetica, sans-serif;
+/*  font-family: verdana, arial, helvetica, sans-serif; */
+  font-size:   12pt;
+  line-height: normal;
+  font-weight: normal;
+}
+
+.admin-form fieldset {
+	margin-top: 2em;
+  background: #edf;
+}
+
+.admin-form legend {
+  color: #fdf;
+  background: #508;
+  font-family: sans-serif;
+  padding: 0.2em 1em;
+}
+
+.admin-form label {
+  width: 15em;
+  float: left;
+  text-align: right;
+  margin-right: 0.5em;
+  display: block;
+}
+
+.admin-form .submit {
+  margin-left: 5.5em;
+}
+
+.survey-form fieldset {
+  background: #edf;
+}
+
+.survey-form legend {
+  color: #fdf;
+  background: #508;
+  font-family: sans-serif;
+  padding: 0.2em 1em;
+}
+
+.survey-form label {
+  width: 15em;
+  float: none;
+  text-align: right;
+  margin-left: 0.5em;
+  display: inline;
+}
+
+.survey-form .submit {
+  margin-left: 5.5em;
+}
+
+/* The error box */
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+body { 
+  background-image: image-url("sumtextb.jpg"); 
+  background-color: #ffffcc; 
+  color: #000066;
+  font-family: "Century Gothic", "Tw Cen Mt", verdana, arial, helvetica, sans-serif;
+/*  font-family: verdana, arial, helvetica, sans-serif; */
+  font-size:   15pt;
+  line-height: normal;
+  font-weight: normal;
+}
+
+/* body, p, ol, ul, td {
+  font-family: "Century Gothic", "Tw Cen Mt", verdana, arial, helvetica, sans-serif;
+  font-size:   15pt;
+  line-height: normal;
+  font-weight: normal;
+} */
+
+td.label {
+  font-weight: bold;
+  vertical-align: top;
+}
+
+td.value {
+  font-weight: bold;
+  color: red;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a { color: #660099; }
+a:visited { color: #993366; }
+a:active { color: #6666cc; }
+a:hover { color: #ff0000; }
+
+#mainbody {
+  border-top: black 2px solid;
+  border-left: black 2px solid;
+  position: absolute; 
+  margin-top: 75px
+}
+
+h1 {
+  line-height: normal;
+}
+
+#topstuff {
+
+}
+
+h1.main {
+	position: absolute; 
+	margin-left: 3px; 
+	margin-top: 5px; 
+	z-index: 2;
+	text-align: left;
+  font-family: "Century Gothic", "Tw Cen Mt", verdana, arial, helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 56px;
+  color: #200066;
+}
+
+h1.shadow {
+	position: absolute; 
+	margin-left: 8px; 
+	margin-top: 10px; 
+	z-index: 1;
+	text-align: left;
+  font-family: "Century Gothic", "Tw Cen Mt", verdana, arial, helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 56px;
+  color: #cccccc;
+}
+
+h3 {
+  line-height: normal;
+}
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+div.uploadStatus {
+  margin: 5px;
+}
+
+div.progressBar {
+  margin: 5px;
+}
+
+div.progressBar div.border {
+  background-color: #fff;
+  border: 1px solid gray;
+  width: 100%;
+}
+
+div.progressBar div.background {
+  background-color: #333;
+  height: 18px;
+  width: 0%;
+}
+
+#mysidebar {
+  width: 200px;
+  padding-top: 1em;
+  padding-left: 20px;
+  padding-bottom: 3em;
+}
+
+#mymenu {
+  margin-top: 2px;
+  padding-top: 30px;
+  padding-bottom: 60px;
+  border-right: black 2px solid;
+}
+
+#mystack {
+ /* margin-left: 169px; */
+  margin-left: -6px;
+}
+
+#mybanner {
+/*  background: #dce; */
+  padding-top: 0px;
+  padding-bottom: 100px;
+  font: 50px/50px "Arial", sanserif;
+  color: #407;
+}
+
+#mybanner a { color: #200066; }
+#mybanner a:visited { color: #200066; }
+#mybanner a:active { color: #200066; }
+#mybanner a:hover { color: #200066; }
+
+#mymain {
+	/* margin = distance from left edge of screen to left edge of box */
+  margin-left: 0px;
+  padding-top: 0ex;
+  /* padding = distance from edge of box to text */
+  padding-left: 2em;
+/*  background: white; */
+  border-top: black 2px solid;
+  border-left: black 2px solid;
+}
+
+#myfooter { 
+  clear: both;
+  margin-left: 0px;
+  padding-top: 1ex;
+  padding-left: 4em;
+}
+
+#announce {
+  padding: 1em;
+  border: black 2px solid;
+  margin-bottom: 1em;
+}
+
+#announce h3 {
+	margin-top: 0em;
+	margin-bottom: 0em;
+}
+
+#announce p {
+	margin-left: 2em;
+	margin-top: 0em;
+	margin-bottom: 0em;
+}
+
+#links-list {
+	font-weight: bold;
+}
+
+#links-list img {
+	vertical-align: top;
+}
+
+#faqs dt {
+font-weight: bold;
+color: red
+}
+
+#faqs dd {
+  margin-bottom: 10px;
+}
+
+div#mymenu ul {
+	// TODO: make the entire badge a clickable link, not just the text
+	list-style-type: none;
+	padding-left: 0px;
+	
+	a { color: #000066; text-decoration: none; }
+	a:visited { color: #000066; }
+	a:active { color: #000066; }
+	a:hover { color: #000099; }
+
+
+	li {
+		background-image: image-url('button_dbl_pink_3.png');
+		padding: 5px;
+		font-size: 15pt;
+		text-align: right;
+		/* border-top: 1px solid; */
+		/* border-bottom: 1px solid; */
+		/* border-left: 3px solid; */
+		/* border-right: 3px solid; */
+		/* border-radius: 25px; */
+	}
+}

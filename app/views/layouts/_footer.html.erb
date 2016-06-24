@@ -1,0 +1,55 @@
+<div id="myfooter">
+	<p align="center"><%= image_tag 'sumhorsa.gif', width: '600', height: '10' %>
+	</p>
+	<center>
+		<% if false %>
+			<!-- This part doesn't show -->
+				<table width=90% border=0 cellpadding=5><tr>
+						<td colspan=3 align=center><a href="http://maa.org"><img src="/images/MAA_logo_PMS286_sm.jpg" alt="Mathematical Association of America"></a></td>
+					</tr>
+					<tr>
+						<td width=1><a href="http://uww.edu"><img src="/images/uwwLogoBlack.png" alt="University of Wisconsin-Whitewater"></a></td>
+						<td align=left>			<h5><font color="#660066">All content copyright &copy; 2003-<%= Time.now.year %> by the 
+									University of Wisconsin-Whitewater and by the Board of Regents of the 
+									University of Wisconsin System.<br />
+									<%
+										 event = Event.find(:all, :order =>'startdatetime DESC')[0]
+									if event.inprogress %>
+									<b><i><font color=red>24-hour Contest Helpline: 1-262-477-9593 or 
+												<a href="mailto:info@purplecomet.org">[info@purplecomet.org]</a>.</font></i></b><br />
+									<% end %>
+									For problems or questions regarding this website contact 
+									<a href="mailto:webmaster@purplecomet.org">[webmaster@purplecomet.org]</a>.<br />
+									Last updated: 30 December 2011.</font></h5>
+						</td>
+						<td width=1><a href="http://utdallas.edu"><img src="/images/utd-logo.gif" alt="University of Texas at Dallas"></a></td>
+					</tr>
+				</table>
+		<% end %>
+		<table width=60% border=0 cellpadding=5>
+			<tr>
+				<td width="35%" align="center"><%= image_tag 'Purple_Comet_Logo_2013.jpg', width: '180', height:'100', alt: 'Purple Comet Math Meet logo' %></td>
+				<td width="30%" align="center"><a href="http://www.facebook.com/pages/Purple-Comet-Math-Meet/120628768005087?ref=ts&fref=ts">
+					<%= image_tag 'f_logo.jpg', width: '100', height: '100' %></a></td>
+				<td width="35%" align="center"><a href="https://www.awesomemath.org/">
+					<%= image_tag 'AwesomeMath_logo_2013.gif', width: '118', height: '100', alt: 'Awesome Math logo' %></a></td>
+			</tr><tr>
+				<td colspan=3 align=left>
+					<h5><font color="#660066">All content copyright &copy; 2003-<%= Time.now.year %> by Jonathan Kane, Titu Andreescu 
+							and Bennette Harris.<br />
+							<%
+							#  event = Event.find(:all, :order =>'startdatetime DESC')[0]
+							# if event.inprogress
+							if false
+							%>
+							<b><i><font color=red>24-hour Contest Helpline: 1-262-477-9593 or 
+										<a href="mailto:info@purplecomet.org">[info@purplecomet.org]</a>.</font></i></b><br />
+							<% end %>
+							For problems or questions regarding this website contact 
+							<a href="mailto:webmaster@purplecomet.org">[webmaster@purplecomet.org]</a>.<br />
+							Last updated: 1 February 2016.</font></h5>
+				</td>
+			</tr>
+		</table>
+	</center>
+</div>
