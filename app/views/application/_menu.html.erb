@@ -1,0 +1,13 @@
+<div id="mymenu">
+	<ul>
+		<% if admin_signed_in? %>
+			<li><%= link_to 'Admin page', '/' %></li>
+			<li><%= link_to "Logout", destroy_admin_session_path, method: :delete %></li>
+			<div class="space"></div>
+		<% end %>
+		<li><%= link_to 'Home', '/' %></li>
+		<li><%= link_to 'Contest results', '/' %></li>
+		<li><%= link_to 'Previous solutions', '/' %></li>
+		<li><%= link_to 'Contact us', '/' %></li>
+	</ul>
+</div>

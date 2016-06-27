@@ -1,6 +1,6 @@
 module ApplicationHelper
   # Methods added to this helper will be available to all templates in the application.
-  
+
   Btn_width = '150'
   # Btn_server = 'http://buttons.purplecomet.org'
   # Btn_server = 'http://www.purplecomet.org'

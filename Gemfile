@@ -29,8 +29,9 @@ gem 'jbuilder', '~> 2.0'
 # gem 'bcrypt', '~> 3.1.7'
 #gem 'sprockets-rails', :require => 'sprockets/railtie'
 
-# For the main menu
-gem 'simple-navigation'
+# For user authentication
+gem 'devise'
+gem 'omniauth'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -51,7 +52,7 @@ group :development do
   gem 'capistrano-rails', '~> 1.1.1'
   gem 'capistrano-rbenv', '~> 2.0'
   gem 'capistrano-passenger'
-# https://gorails.com/deploy/ubuntu/14.04
+  # https://gorails.com/deploy/ubuntu/14.04
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

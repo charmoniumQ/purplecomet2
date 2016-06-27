@@ -19,7 +19,7 @@
 					<div id="mysidebar">
 						<a href="/home/home"><%= image_tag 'SmallMathCometMirrored.gif', width: '200', border: '0' %></a>
 						<div id="mymenu">
-							<%= render_navigation %>
+							<%= render 'menu' %>
 							<br />
 							<!--a href="/home/show/poster"><img src="/images/poster-sm.jpg" width=128 height=165></a-->
 						</div>
@@ -35,6 +35,9 @@
 						<div id="mymain">
 							<% if flash[:notice] -%>
 							<div id="notice"><%= flash[:notice] %></div>
+							<% end -%>
+							<% if flash[:alert] -%>
+							<div id="alert"><%= flash[:alert] %></div>
 							<% end -%>
 
 							<%= yield  %>

@@ -2,7 +2,9 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 561F9B9CA
 sudo sh -c 'echo deb https://oss-binaries.phusionpassenger.com/apt/passenger jessie main > /etc/apt/sources.list.d/passenger.list'
 sudo apt-get update
 sudo apt-get upgrade -y
-sudo apt-get install -y git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev nginx-extras passenger
+sudo apt-get install -y git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev nginx-extras passenger nodejs
+
+sudo ln -s `which nodejs` /bin/node # TODO: is this really necessary
 
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
@@ -22,6 +24,7 @@ rbenv rehash
 
 echo "Go uncomment a line in /etc/nginx/nginx.conf"
 echo "And have a look at /etc/nginx/passenger.conf"
+echo "And /etc/nginx/sites-enabled/default"
 echo "And press ENTER"
 read
 
@@ -34,4 +37,8 @@ echo "Add the ssh key in bitbucket"
 echo "And press ENTER"
 read
 
-#git clone git@bitbucket.org:purple_comet/purple-comet-2.git
+git clone git@bitbucket.org:purple_comet/purple-comet-2.git ~/purple-comet-2
+cd ~/purple-comet-2
+bundle install --without production test
+#sudo systemctl restart nginx
+#RAILS_ENV=production SECRET_KEY_BASE=`rake secret` bundle exec rails server
