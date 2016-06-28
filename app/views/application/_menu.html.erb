@@ -1,7 +1,7 @@
 <div id="mymenu">
 	<ul>
 		<% if admin_signed_in? %>
-			<li><%= link_to 'Admin page', '/' %></li>
+			<li><%= link_to 'Admin page', '/admin/index' %></li>
 			<li><%= link_to "Logout", destroy_admin_session_path, method: :delete %></li>
 			<div class="space"></div>
 		<% end %>

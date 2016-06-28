@@ -47,11 +47,12 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 
   # Use Capistrano for deployment
-  gem 'capistrano', '~> 3.1'
-  gem 'capistrano-bundler', '~> 1.1.2'
-  gem 'capistrano-rails', '~> 1.1.1'
-  gem 'capistrano-rbenv', '~> 2.0'
+  gem 'capistrano', '~> 3.5.0'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
   gem 'capistrano-passenger'
+  gem 'capistrano-rails-console'
   # https://gorails.com/deploy/ubuntu/14.04
 end
 
