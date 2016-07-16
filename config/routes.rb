@@ -6,16 +6,11 @@ Rails.application.routes.draw do
     passwords: 'supervisors/passwords',
     registrations: 'supervisors/registrations',
     sessions: 'supervisors/sessions',
-    unlocks: 'supervisors/unlocks'
   }
 
   devise_for :admins, controllers: {
-    confirmations: 'admins/confirmations',
-    omniauths: 'admins/omniauth',
-    passwords: 'admins/passwords',
-    registrations: 'admins/registrations',
     sessions: 'admins/sessions',
-    unlocks: 'admins/unlocks'
+    passwords: 'admins/passwords',
   }
 
   root to: 'home#index'

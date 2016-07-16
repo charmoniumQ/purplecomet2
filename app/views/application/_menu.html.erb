@@ -1,11 +1,21 @@
 <div id="mymenu">
 	<ul>
+		<li><%= link_to 'Home', '/' %></li>
+		<div class="space"></div>
+
 		<% if admin_signed_in? %>
 			<li><%= link_to 'Admin page', '/admin/index' %></li>
-			<li><%= link_to "Logout", destroy_admin_session_path, method: :delete %></li>
+			<li><%= link_to "Logout", destroy_admin_session_path %></li>
 			<div class="space"></div>
 		<% end %>
-		<li><%= link_to 'Home', '/' %></li>
+
+		<% if supervisor_signed_in? %>
+			<li><%= link_to "Logout", destroy_supervisor_session_path %></li>
+			<div class="space"></div>
+		<% else %>
+			<li><%= link_to "Sign in", new_supervisor_session_path %></li>
+		<% end %>
+
 		<li><%= link_to 'Contest results', '/' %></li>
 		<li><%= link_to 'Previous solutions', '/' %></li>
 		<li><%= link_to 'Contact us', '/' %></li>

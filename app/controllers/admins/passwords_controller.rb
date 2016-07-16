@@ -1,4 +1,6 @@
 class Admins::PasswordsController < Devise::PasswordsController
+  # TODO: Delete email reset
+
   # GET /resource/password/new
   # def new
   #   super
