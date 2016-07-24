@@ -30,13 +30,11 @@ class DeviseCreateSupervisors < ActiveRecord::Migration[5.0]
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
-      t.string :name
-      t.string :schoolname
-      t.string :phone # TODO: more efficient storage for these
-      t.string :street
-      t.string :city
-      t.string :state
-      t.string :country
+      # http://stackoverflow.com/questions/30485/what-is-a-reasonable-length-limit-on-person-name-fields
+      t.string :name, null: false, limit: 70
+      t.string :phone, limit: 20, null: false
+      t.belongs_to :school, null: false
+      #t.has_many :teams, inverse_of: :supervisor
 
       t.timestamps null: false
     end

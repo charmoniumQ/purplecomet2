@@ -46,18 +46,15 @@ class Supervisors::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    custom_params = [:name, :schoolname, :phone, :street, :city, :state, :country]
     devise_parameter_sanitizer.permit(:account_update, keys: @@params + [:email, :password, :password_confirmation, :current_password])
   end
 
 
   def sign_up_params
-    custom_params = [:name, :schoolname, :phone, :street, :city, :state, :country]
     params.require(:supervisor).permit(*(@@params + [:email, :password, :password_confirmation, :unconfirmed_email]))
   end
 
   def account_update_params
-    custom_params = [:name, :schoolname, :phone, :street, :city, :state, :country]
     params.require(:supervisor).permit(*(@@params + [:email, :password, :password_confirmation, :current_password]))
   end
 
