@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'register/index'
+
   devise_for :contestants
   devise_for :supervisors, controllers: {
     confirmations: 'supervisors/confirmations',

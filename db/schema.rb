@@ -13,10 +13,10 @@
 ActiveRecord::Schema.define(version: 20160724204358) do
 
   create_table "addresses", force: :cascade do |t|
-    t.string   "street",     null: false
+    t.string   "street"
     t.string   "city"
     t.string   "state"
-    t.string   "country",    null: false
+    t.string   "country"
     t.string   "zip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -38,9 +38,9 @@ ActiveRecord::Schema.define(version: 20160724204358) do
   end
 
   create_table "answers", force: :cascade do |t|
-    t.integer  "question_number", null: false
+    t.integer  "question_number"
     t.integer  "answer"
-    t.integer  "submission_id",   null: false
+    t.integer  "submission_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.index ["submission_id"], name: "index_answers_on_submission_id"
@@ -62,10 +62,10 @@ ActiveRecord::Schema.define(version: 20160724204358) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
-    t.string   "name",                   limit: 70,              null: false
-    t.integer  "grade",                                          null: false
-    t.integer  "team_id",                                        null: false
-    t.integer  "school_id",                                      null: false
+    t.string   "name",                   limit: 70
+    t.integer  "grade"
+    t.integer  "team_id"
+    t.integer  "school_id"
     t.datetime "created_at",                                     null: false
     t.datetime "updated_at",                                     null: false
     t.index ["confirmation_token"], name: "index_contestants_on_confirmation_token", unique: true
@@ -77,28 +77,27 @@ ActiveRecord::Schema.define(version: 20160724204358) do
   end
 
   create_table "divisions", force: :cascade do |t|
-    t.string   "longname",   null: false
-    t.string   "shortname",  null: false
+    t.string   "longname"
+    t.string   "shortname"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "events", force: :cascade do |t|
-    t.string   "longtitle",     null: false
-    t.string   "shorttitle",    null: false
-    t.datetime "startdatetime", null: false
-    t.datetime "enddatetime",   null: false
+    t.string   "longtitle"
+    t.string   "shorttitle"
+    t.datetime "startdatetime"
+    t.datetime "enddatetime"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
 
   create_table "schools", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.integer  "address_id", null: false
+    t.string   "name"
+    t.integer  "address_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["address_id"], name: "index_schools_on_address_id"
-    t.index [nil], name: "index_schools_on_division"
   end
 
   create_table "submissions", force: :cascade do |t|
@@ -122,8 +121,8 @@ ActiveRecord::Schema.define(version: 20160724204358) do
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
     t.string   "name",                   limit: 70,              null: false
-    t.string   "phone",                  limit: 20,              null: false
-    t.integer  "school_id",                                      null: false
+    t.string   "phone",                  limit: 20
+    t.integer  "school_id"
     t.datetime "created_at",                                     null: false
     t.datetime "updated_at",                                     null: false
     t.index ["confirmation_token"], name: "index_supervisors_on_confirmation_token", unique: true
@@ -133,11 +132,11 @@ ActiveRecord::Schema.define(version: 20160724204358) do
   end
 
   create_table "teams", force: :cascade do |t|
-    t.string   "name",          null: false
-    t.integer  "school_id",     null: false
-    t.integer  "event_id",      null: false
-    t.integer  "division_id",   null: false
-    t.integer  "supervisor_id", null: false
+    t.string   "name"
+    t.integer  "school_id"
+    t.integer  "event_id"
+    t.integer  "division_id"
+    t.integer  "supervisor_id"
     t.integer  "submission_id"
     t.datetime "starttime"
     t.integer  "correct_count"
