@@ -7,10 +7,11 @@ class School < ApplicationRecord
   def self.search(terms)
     terms.downcase!
 
+    schools = []
     # search for substring
     School.all.each do |school|
       if school[:name].downcase.index(terms)
-        return school
+        schools.push(school)
       end
     end
 
@@ -18,11 +19,13 @@ class School < ApplicationRecord
     terms_arr = terms.split(' ')
     School.all.each do |school|
       if terms_arr.all? { |term| !school[:name].downcase.index(term).nil? }
-        return school
+        if not schools.include?(school)
+          schools.push(school)
+        end
       end
     end
 
     # not found
-    return nil
+    return schools
   end
 end

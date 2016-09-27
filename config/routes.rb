@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'register/index'
+  get 'register/search'
 
   devise_for :contestants
   devise_for :supervisors, controllers: {
