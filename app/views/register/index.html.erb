@@ -11,23 +11,37 @@
         <p>Find me in app/views/register/index.html.erb</p>
         <form>
             First Name:
-            <input type="text" id="first_name" name="user_input">
+            <input type="text" id="first_name" name="user_input" onkeyup="checkForm()">
             Last Name:
-            <input type="text" id="last_name" name="user_input"><br>
+            <input type="text" id="last_name" name="user_input" onkeyup="checkForm()"><br>
             School Name:
-            <input type="text" id="school_name" name="user_input" onblur="checkSchool();"><br>
+            <input type="text" id="school_name" name="user_input" onkeyup="checkForm()" onblur="checkSchool();"><br>
             Address:
-            <input type="text" id="school_street" name="user_input"><br>
+            <input type="text" id="school_street" name="user_input" onkeyup="checkForm()"><br>
             City:
-            <input type="text" id="school_city" name="user_input"><br>
+            <input type="text" id="school_city" name="user_input" onkeyup="checkForm()"><br>
             ZIP:
-            <input type="text" id="school_zip" name="user_input"><br>
+            <input type="text" id="school_zip" name="user_input" onkeyup="checkForm()"><br>
             Country:
-            <input type="text" id="school_country" name="user_input"  >
+            <input type="text" id="school_country" name="user_input" onkeyup="checkForm()">
             <br><br>
             <input type="submit" id="submit" disabled="disabled">
         </form>
         <script type="text/javascript">
+            function checkForm(){
+                var inputFields = document.getElementsByName("user_input");
+                var complete = true;
+                for (i = 0; i < inputFields.length; i++) {
+                    if (inputFields[i].value == "") {
+                        complete = false;
+                    }
+                }
+                if (complete) {
+                    submit.disabled = false;
+                } else {
+                    submit.disabled = true;
+                }
+            }
             function checkSchool(){
                 input = $("#school_name").val();
                 data = "search=" + input;
@@ -36,18 +50,23 @@
                   data: data,
                   dataType: 'json',
                   success: function(response) {
-                    alert("How do I process the response?");
-                  } 
-                })//.done(processSchools);
+                    //Will eventually need to check which school in response is most correct? If not done server side?
+                    if(response.length > 0){
+                        //for(key in response){
+                        var tmp; = response[0];
+                        if (typeof tmp.name !== 'undefined') $("#school_name").val(tmp.name);
+                        if (typeof tmp.address !== 'undefined') $("#school_address").val(tmp.address);
+                        if (typeof tmp.city !== 'undefined') $("#school_city").val(tmp.city);
+                        if (typeof tmp.zip !== 'undefined') $("#school_zip").val(tmp.zip);
+                        if (typeof tmp.country !== 'undefined') $("#school_country").val(tmp.country);
+                        //}
+                    }
+                    else{
+                        console.log("no result");
+                    }
+                  }, 
+                })
             }
-            // function processSchools(data){
-//                 if (data.length > 0) {
-//                     console.log(data);
-//                     for (var i = 0; i < data.length; i++) {
-//                         $data.filter('#').text();
-//                     }
-//                 }
-//             }
         </script>
         <%= yield %>
     </body>
