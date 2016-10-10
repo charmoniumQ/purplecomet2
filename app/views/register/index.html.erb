@@ -1,2 +1,55 @@
-<h1>Register#index</h1>
-<p>Find me in app/views/register/index.html.erb</p>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <title>Purple Comet Register</title>
+        <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+        <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+        <%= csrf_meta_tags %>
+    </head>
+    <body>
+        <h1>Register#index</h1>
+        <p>Find me in app/views/register/index.html.erb</p>
+        <form>
+            First Name:
+            <input type="text" id="first_name" name="user_input">
+            Last Name:
+            <input type="text" id="last_name" name="user_input"><br>
+            School Name:
+            <input type="text" id="school_name" name="user_input" onblur="checkSchool();"><br>
+            Address:
+            <input type="text" id="school_street" name="user_input"><br>
+            City:
+            <input type="text" id="school_city" name="user_input"><br>
+            ZIP:
+            <input type="text" id="school_zip" name="user_input"><br>
+            Country:
+            <input type="text" id="school_country" name="user_input"  >
+            <br><br>
+            <input type="submit" id="submit" disabled="disabled">
+        </form>
+        <script type="text/javascript">
+            function checkSchool(){
+                input = $("#school_name").val();
+                data = "search=" + input;
+                $.ajax({
+                  url: 'http://localhost:3000/register/search?search=cool%20school',
+                  data: data,
+                  dataType: 'json',
+                  success: function(response) {
+                    alert("How do I process the response?");
+                  } 
+                })//.done(processSchools);
+            }
+            // function processSchools(data){
+//                 if (data.length > 0) {
+//                     console.log(data);
+//                     for (var i = 0; i < data.length; i++) {
+//                         $data.filter('#').text();
+//                     }
+//                 }
+//             }
+        </script>
+        <%= yield %>
+    </body>
+</html>
+
