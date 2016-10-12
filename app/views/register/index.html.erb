@@ -8,7 +8,7 @@
     </head>
     <body>
         <h1>Register#index</h1>
-        <p>Find me in app/views/register/index.html.erb</p>
+        <p>Find me in app/views/register/index.html.erb</p> 
         <form>
             First Name:
             <input type="text" id="first_name" name="user_input" onkeyup="checkForm()">
@@ -53,7 +53,7 @@
                     //Will eventually need to check which school in response is most correct? If not done server side?
                     if(response.length > 0){
                         //for(key in response){
-                        var tmp; = response[0];
+                        var tmp = response[0];
                         if (typeof tmp.name !== 'undefined') $("#school_name").val(tmp.name);
                         if (typeof tmp.address !== 'undefined') $("#school_address").val(tmp.address);
                         if (typeof tmp.city !== 'undefined') $("#school_city").val(tmp.city);
